@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GVG LEAGUE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: white;
+      background: black;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #ccc;
+    }
+    .btn {
+      background-color: #5865F2;
+      color: white;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+    .section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      font-size: 1rem;
+      color: #bbb;
+    }
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .section ul li {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    .section ul li strong {
+      color: #fff;
+    }
+    .bg-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.8) 100%);
+      z-index: 0;
+      overflow: hidden;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -150px;
+      width: 40px;
+      height: 40px;
+      background: rgba(88, 101, 242, 0.3);
+      border-radius: 50%;
+      animation: float 20s linear infinite;
+    }
+    .bubble:nth-child(odd) {
+      background: rgba(88, 101, 242, 0.5);
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(-150vh) scale(0.5);
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+    footer a {
+      color: #5865F2;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-animated">
+    <script>
+      for (let i = 0; i < 30; i++) {
+        const b = document.createElement('div');
+        b.classList.add('bubble');
+        b.style.left = `${Math.random() * 100}vw`;
+        b.style.width = b.style.height = `${10 + Math.random() * 40}px`;
+        b.style.animationDuration = `${10 + Math.random() * 20}s`;
+        document.querySelector('.bg-animated').appendChild(b);
+      }
+    </script>
+  </div>
+
+  <header>
+    <h1>GVG LEAGUE</h1>
+    <p>Le bot Discord pour organiser tes Guild vs Guild de manière efficace.</p>
+    <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1391239377161814016" target="_blank">Inviter le bot</a>
+  </header>
+
+  <section class="section">
+    <h2>📌 Description</h2>
+    <p>GVG League est un bot Discord simple et efficace conçu pour faciliter l’organisation des sessions Guild vs Guild (GvG) dans ta guilde. Grâce à lui, les membres peuvent rapidement voter pour leurs horaires disponibles, et les leaders peuvent lancer des sondages interactifs en un clic.</p>
+  </section>
+
+  <section class="section">
+    <h2>⚙️ Commandes</h2>
+    <ul>
+      <li><strong>/setguild</strong> : Définit le nom de la guilde</li>
+      <li><strong>/settimezone</strong> : Choisit le fuseau horaire (NA/EU)</li>
+      <li><strong>/startpoll</strong> : Lance un sondage adapté au jour</li>
+      <li><strong>/setlanguage</strong> : Change la langue des annonces (FR/EN)</li>
+      <li><strong>/help</strong> : Affiche l’aide du bot</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>🌐 Langue</h2>
+    <p>Le bot est configuré par défaut en anglais. Tu peux utiliser <code>/setlanguage</code> pour changer la langue vers le français.</p>
+  </section>
+
+  <section class="section">
+    <h2>💡 Exemple d’utilisation</h2>
+    <p>Un leader utilise <code>/startpoll</code>, les membres réagissent avec des émojis selon leur disponibilité. Simple, rapide et efficace.</p>
+  </section>
+
+  <section class="section">
+    <h2>🛡️ Permissions requises</h2>
+    <p>Lors de l'invitation du bot, assure-toi de lui accorder les permissions suivantes : envoyer des messages, gérer les réactions et lire les messages dans les canaux souhaités.</p>
+  </section>
+
+  <footer>
+    <p>
+      <a href="terms.html">Terms of Service</a> 
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
+    <p>&copy; 2025 GVG League. All rights reserved.</p>
+  </footer>
+</body>
+</html>

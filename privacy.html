@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - GVG LEAGUE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: black;
+      color: white;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 10;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+    h2 {
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+    p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 10;
+    }
+    a {
+      color: #5865F2;
+      text-decoration: none;
+      position: relative;
+      z-index: 10;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+      padding-bottom: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    footer a {
+      margin: 0 1rem;
+      color: #5865F2;
+    }
+
+    /* Animation background */
+    .bg-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: 0;
+      overflow: hidden;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -150px;
+      width: 40px;
+      height: 40px;
+      background: rgba(88, 101, 242, 0.3);
+      border-radius: 50%;
+      animation: float 20s linear infinite;
+    }
+    .bubble:nth-child(odd) {
+      background: rgba(88, 101, 242, 0.5);
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(-150vh) scale(0.5);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-animated"></div>
+
+  <h1>Privacy Policy</h1>
+
+  <p>Your privacy is important to us. This privacy policy explains how GVG League collects, uses, and protects your information.</p>
+
+  <h2>1. Information Collected</h2>
+  <p>GVG League does not collect personal data directly. However, Discord may provide certain information through its API to enable bot functionality (e.g., user IDs, guild info).</p>
+
+  <h2>2. Use of Information</h2>
+  <p>The information accessed is solely used to provide bot features such as polls and announcements. We do not sell or share your data with third parties.</p>
+
+  <h2>3. Data Storage and Security</h2>
+  <p>Any data stored by the bot is minimal and used only for functionality. We employ reasonable security measures to protect your data.</p>
+
+  <h2>4. Third-Party Services</h2>
+  <p>GVG League may use Discord’s platform services but does not share your data with other third parties.</p>
+
+  <h2>5. Your Rights</h2>
+  <p>You can request data removal or support by contacting the bot administrators.</p>
+
+  <footer>
+    <p>
+      <a href="terms.html">Terms of Service</a>
+      <a href="index.html">Home</a>
+    </p>
+    <p>&copy; 2025 GVG League. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Generate bubbles
+    const bg = document.querySelector('.bg-animated');
+    for (let i = 0; i < 30; i++) {
+      const b = document.createElement('div');
+      b.classList.add('bubble');
+      b.style.left = `${Math.random() * 100}vw`;
+      const size = 10 + Math.random() * 40;
+      b.style.width = b.style.height = `${size}px`;
+      b.style.animationDuration = `${10 + Math.random() * 20}s`;
+      bg.appendChild(b);
+    }
+  </script>
+</body>
+
+</html>

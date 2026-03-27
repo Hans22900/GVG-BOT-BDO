@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service - GVG LEAGUE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: black;
+      color: white;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 10;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+    h2 {
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+    p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 10;
+    }
+    a {
+      color: #5865F2;
+      text-decoration: none;
+      position: relative;
+      z-index: 10;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+      padding-bottom: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    footer a {
+      margin: 0 1rem;
+      color: #5865F2;
+    }
+
+    /* Animation background */
+    .bg-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: 0;
+      overflow: hidden;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -150px;
+      width: 40px;
+      height: 40px;
+      background: rgba(88, 101, 242, 0.3);
+      border-radius: 50%;
+      animation: float 20s linear infinite;
+    }
+    .bubble:nth-child(odd) {
+      background: rgba(88, 101, 242, 0.5);
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(-150vh) scale(0.5);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-animated"></div>
+
+  <h1>Terms of Service</h1>
+
+  <p>Welcome to GVG League. By using our bot and services, you agree to comply with and be bound by the following terms and conditions.</p>
+
+  <h2>1. Use of Service</h2>
+  <p>GVG League is designed to assist guilds in organizing Guild vs Guild events on Discord. You agree to use the bot responsibly and in compliance with Discord's Terms of Service.</p>
+
+  <h2>2. Permissions</h2>
+  <p>To function correctly, the bot requires certain permissions such as sending messages, managing reactions, and reading messages in designated channels. Please grant these permissions during the bot invitation process.</p>
+
+  <h2>3. User Content</h2>
+  <p>You are responsible for the content you share through the bot. GVG League does not endorse or moderate user content and disclaims liability for any inappropriate messages or actions.</p>
+
+  <h2>4. Disclaimer</h2>
+  <p>The bot is provided "as is" without warranties of any kind. We do not guarantee uninterrupted service or error-free operation.</p>
+
+  <h2>5. Changes to Terms</h2>
+  <p>We reserve the right to modify these terms at any time. Continued use of the service after changes implies acceptance of the updated terms.</p>
+
+  <footer>
+    <p>
+      <a href="privacy.html">Privacy Policy</a> 
+      <a href="index.html">Home</a>
+    </p>
+    <p>&copy; 2025 GVG League. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Generate bubbles
+    const bg = document.querySelector('.bg-animated');
+    for (let i = 0; i < 30; i++) {
+      const b = document.createElement('div');
+      b.classList.add('bubble');
+      b.style.left = `${Math.random() * 100}vw`;
+      const size = 10 + Math.random() * 40;
+      b.style.width = b.style.height = `${size}px`;
+      b.style.animationDuration = `${10 + Math.random() * 20}s`;
+      bg.appendChild(b);
+    }
+  </script>
+</body>
+
+</html>
